@@ -1,4 +1,4 @@
-# TurkishRanges
+# TurkishRegexps
 
 [![Gem Version](https://badge.fury.io/rb/turkish_regexps.svg)](https://badge.fury.io/rb/turkish_regexps)
 [![Build Status](https://travis-ci.org/sbagdat/turkish_regexps.svg?branch=main)](https://travis-ci.org/sbagdat/turkish_regexps)
@@ -61,4 +61,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the TurkishRanges project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/turkish_regexps/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the TurkishRegexps project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/turkish_regexps/blob/master/CODE_OF_CONDUCT.md).
