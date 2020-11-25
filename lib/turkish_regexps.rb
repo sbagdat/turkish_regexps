@@ -1,6 +1,8 @@
-require "turkish_regexps/version"
+# frozen_string_literal: true
+
+require 'turkish_ranges'
+require 'turkish_regexps/version'
+require 'turkish_regexps/tr_regexp'
 
 module TurkishRegexps
-  class Error < StandardError; end
-  # Your code goes here...
 end

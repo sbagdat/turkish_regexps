@@ -1,8 +1,10 @@
-# TurkishRegexps
+# TurkishRanges
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/turkish_regexps`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Gem Version](https://badge.fury.io/rb/turkish_regexps.svg)](https://badge.fury.io/rb/turkish_regexps)
+[![Build Status](https://travis-ci.org/sbagdat/turkish_regexps.svg?branch=main)](https://travis-ci.org/sbagdat/turkish_regexps)
+[![Code Climate](https://codeclimate.com/github/sbagdat/turkish_regexps/badges/gpa.svg)](https://codeclimate.com/github/sbagdat/turkish_regexps)
 
-TODO: Delete this and the text above, and describe your gem
+Regular expressions meet Turkish language. 
 
 ## Installation
 
@@ -22,7 +24,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'turkish_regexps'
+
+include TurkishRegexps
+
+# Creating new regexps
+TrRegexp.new(/[ç-ş]/i)
+
+# Translating character classes
+TrRegexp.new(/[ç-ö]/).translate        # /[çdefgğhıijklmnoö]/
+TrRegexp.new(/[A-Z]/).translate        # /[ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZ]/
+TrRegexp.new(/[Ç-Ş#!$ç-ş]/).translate  # /[ÇDEFGĞHIİJKLMNOÖPQRSŞ#!$çdefgğhıijklmnoöpqrsş]/
+
+# Translating meta characters 
+re = TrRegexp.new(/\w+/).translate
+Regexp.compile(re).match('ABCÇDEFGĞHIİJKLMNOÖPQRSabcçdeğiş')[0]  # 'ABCÇDEFGĞHIİJKLMNOÖPQRSabcçdeğiş'
+
+re = TrRegexp.new(/\W+/).translate
+Regexp.compile(re).match('ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZ.+%')[0]  # '.+%'
+```
 
 ## Development
 
@@ -32,8 +53,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/turkish_regexps. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/turkish_regexps/blob/master/CODE_OF_CONDUCT.md).
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/sbagdat/turkish_regexps. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/turkish_regexps/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -41,4 +61,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the TurkishRegexps project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/turkish_regexps/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the TurkishRanges project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/turkish_regexps/blob/master/CODE_OF_CONDUCT.md).
